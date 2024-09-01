@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import {connection} from "./database/connection.js";
 
 const app = express();
-config({path: "./config/config.env"})
+config({path: "./.env"})
 
 app.use(cors({
     origin: [process.env.FRONTEND_URL],

@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    minLength: [3, "Name must cotain at least 3 characters."],
+    minLength: [3, "Name must contain at least 3 characters."],
     maxLength: [30, "Name cannot exceed 30 characters."],
   },
   email: {
@@ -45,7 +45,7 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     required: true,
-    enum: ["Job Seeker", "Employer"],
+    enum: ["Job Finder", "Employer"],
   },
   createdAt: {
     type: Date,

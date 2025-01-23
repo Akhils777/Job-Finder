@@ -108,7 +108,7 @@ export const fetchJobs =
   async (dispatch) => {
     try {
       dispatch(jobSlice.actions.requestForAllJobs());
-      let link = "http://job-finder-backend-gray.vercel.app/api/v1/job/getall?";
+      let link = "https://job-finder-backend-gray.vercel.app/api/v1/job/getall?";
       let queryParams = [];
       if (searchKeyword) {
         queryParams.push(`searchKeyword=${searchKeyword}`);
@@ -133,7 +133,7 @@ export const fetchSingleJob = (jobId) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForSingleJob());
   try {
     const response = await axios.get(
-      `http://job-finder-backend-gray.vercel.app/api/v1/job/get/${jobId}`,
+      `https://job-finder-backend-gray.vercel.app/api/v1/job/get/${jobId}`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForSingleJob(response.data.job));

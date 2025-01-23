@@ -147,7 +147,7 @@ export const postJob = (data) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForPostJob());
   try {
     const response = await axios.post(
-      `http://job-finder-backend-gray.vercel.app/api/v1/job/post`,
+      `https://job-finder-backend-gray.vercel.app/api/v1/job/post`,
       data,
       { withCredentials: true, headers: { "Content-Type": "application/json" } }
     );
@@ -162,7 +162,7 @@ export const getMyJobs = () => async (dispatch) => {
   dispatch(jobSlice.actions.requestForMyJobs());
   try {
     const response = await axios.get(
-      `http://job-finder-backend-gray.vercel.app/api/v1/job/getmyjobs`,
+      `https://job-finder-backend-gray.vercel.app/api/v1/job/getmyjobs`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForMyJobs(response.data.myJobs));
@@ -176,7 +176,7 @@ export const deleteJob = (id) => async (dispatch) => {
   dispatch(jobSlice.actions.requestForDeleteJob());
   try {
     const response = await axios.delete(
-      `http://job-finder-backend-gray.vercel.app/api/v1/job/delete/${id}`,
+      `https://job-finder-backend-gray.vercel.app/api/v1/job/delete/${id}`,
       { withCredentials: true }
     );
     dispatch(jobSlice.actions.successForDeleteJob(response.data.message));

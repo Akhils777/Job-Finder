@@ -14,7 +14,7 @@ const app = express();
 config({path: "./.env"})
 
 app.use(cors({
-    origin: [process.env.FRONTEND_URL],
+    origin: ["https://job-finder-six-psi.vercel.app"],
     methods: ["GET","POST", "PUT", "DELETE"],
     credentials: true,
 }));

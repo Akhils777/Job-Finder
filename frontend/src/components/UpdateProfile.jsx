@@ -14,6 +14,9 @@ const UpdateProfile = () => {
     (state) => state.updateProfile
   );
 
+  console.log("User Role:", user?.role);
+
+
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
 

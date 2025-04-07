@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const userSlice = createSlice({
   name: "user",
@@ -99,11 +100,15 @@ export const register = (data) => async (dispatch) => {
         headers: { "Content-Type": "multipart/form-data" },
       }
     );
+    toast.success("User registered successfully.");
+    console.log("✅ Register Success:", response.data);
     dispatch(userSlice.actions.registerSuccess(response.data));
     dispatch(userSlice.actions.clearAllErrors());
-  } catch (error) {
+  }  catch (error) {
+    console.log("Register Error:", error?.response?.data); // helpful!
     dispatch(userSlice.actions.registerFailed(error.response.data.message));
   }
+  
 };
 
 export const login = (data) => async (dispatch) => {

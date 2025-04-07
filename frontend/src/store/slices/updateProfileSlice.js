@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const updateProfileSlice = createSlice({
   name: "updateProfile",
@@ -74,6 +75,7 @@ export const updatePassword = (data) => async (dispatch) => {
         headers: { "Content-Type": "application/json" },
       }
     );
+    toast.success("Password updated successfully.");
     dispatch(updateProfileSlice.actions.updatePasswordSuccess());
   } catch (error) {
     dispatch(
